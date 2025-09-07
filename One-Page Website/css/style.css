@@ -1,0 +1,181 @@
+/* Basic layout & typography */
+:root{
+  --bg:#fff;
+  --accent:#e85a00;
+  --text:#222;
+  --muted:#666;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.45;
+  -webkit-font-smoothing:antialiased;
+}
+.container{max-width:1100px;margin:0 auto;padding:24px}
+
+/* Header */
+.site-header{
+  background:linear-gradient(90deg,#ffb703,#fb8500);
+  color:white;
+  padding:28px 24px;
+  text-align:center;
+}
+.site-header h1{margin:0 0 6px;font-size:28px}
+.lead{margin:0;font-weight:600;opacity:0.95}
+
+/* Gallery grid */
+.gallery-grid{
+  display:grid;
+  gap:16px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items:start;
+  margin-top:18px;
+}
+.gallery-item{
+  background:#fff;
+  border-radius:8px;
+  overflow:hidden;
+  text-align:center;
+  box-shadow:0 2px 6px rgba(0,0,0,0.08);
+  padding:8px;
+}
+.gallery-item img{
+  display:block;
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  cursor:pointer;
+  border-radius:6px;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.gallery-item img:hover{ transform:scale(1.03); box-shadow:0 6px 18px rgba(0,0,0,0.12); }
+.gallery-item figcaption{ margin-top:8px; font-size:0.95rem; color:var(--muted) }
+
+/* Lightbox overlay */
+.lightbox{
+  display:none; /* shown by JS */
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:rgba(0,0,0,0.85);
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+.lightbox[aria-hidden="false"]{ display:flex; }
+
+/* Inner dialog */
+.lightbox-inner{
+  position:relative;
+  max-width:1100px;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+}
+
+/* Image area */
+.lightbox-figure{
+  max-width: calc(100% - 140px);
+  width:100%;
+  text-align:center;
+}
+.lightbox-figure img{
+  max-width:100%;
+  height:auto;
+  border-radius:6px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
+
+/* caption */
+.lightbox-caption{
+  margin-top:10px;
+  color:#f3f3f3;
+  font-size:0.98rem;
+}
+
+/* Controls */
+.lightbox-close, .lightbox-prev, .lightbox-next{
+  background:transparent;
+  border:0;
+  color:white;
+  font-size:28px;
+  cursor:pointer;
+  padding:12px;
+  border-radius:6px;
+  transition: background .12s ease;
+}
+.lightbox-close{ position:absolute; top:16px; right:20px; font-size:36px; }
+.lightbox-prev{ font-size:40px; }
+.lightbox-next{ font-size:40px; }
+
+/* Hover states */
+.lightbox-close:hover,.lightbox-prev:hover,.lightbox-next:hover{
+  background:rgba(255,255,255,0.06);
+}
+
+/* Responsive adjustments */
+@media (max-width:760px){
+  .lightbox-inner{ flex-direction:column; gap:12px; padding:8px }
+  .lightbox-figure{ max-width:100% }
+  .lightbox-prev, .lightbox-next{ position:static; font-size:30px }
+  .lightbox-close{ top:10px; right:10px; }
+  .gallery-item img{ height:130px; }
+}
+
+/* === Site Footer === */
+.site-footer {
+  background-color: #222;       /* dark background */
+  color: #f1f1f1;               /* light text */
+  text-align: center;           /* center align content */
+  padding: 20px 10px;           /* space inside footer */
+  margin: 40px 0 0 0;            /* space above footer */
+  font-size: 0.9rem;            /* slightly smaller text */
+}
+
+.site-footer a {
+  color: #f9d342;               /* highlight link color */
+  text-decoration: none;
+  margin: 0 8px;                /* space between links */
+}
+
+.site-footer a:hover {
+  color: #ffffff;               /* white on hover */
+  text-decoration: underline;
+}
+
+.site-footer p {
+  margin: 0px 0;
+}
+
+html, body {
+  height: 100%;           /* allow full height */
+  margin: 0;              /* remove default spacing */
+  display: flex;
+  flex-direction: column; /* stack header, main, footer vertically */
+}
+
+main {
+  flex: 1;                /* push footer to bottom */
+}
+
+.site-footer {
+  background: #222;
+  color: #f1f1f1;
+  text-align: center;
+  padding: 20px;
+}
+
+
+#about {
+  text-align: center;      /* Centers text horizontally */
+  display: flex;           /* Optional: makes it easier to center content vertically too */
+  flex-direction: column;  /* Keeps items stacked vertically */
+  justify-content: center; /* Vertically centers content if the section has height */
+  align-items: center;     /* Horizontally centers items */
+  padding: 10px 20px;      /* Optional: adds spacing inside the section */
+}

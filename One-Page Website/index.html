@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>One-Page Website — Gallery</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="JS/one_page_website.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>My One-Page Website</h1>
+    <p class="lead">Welcome — scroll down to see the gallery.</p>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p>This is a one-page website. Below is a responsive thumbnail gallery with a lightbox (modal) viewer.</p>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="container">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="images/thumb1.jpg" data-large="images/large1.jpg" alt="Mountain sunrise">
+          <figcaption>Mountain sunrise</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="images/thumb2.jpg" data-large="images/large2.jpg" alt="City skyline">
+          <figcaption>City skyline</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="images/thumb3.jpg" data-large="images/large3.jpg" alt="Forest path">
+          <figcaption>Forest path</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="images/thumb4.jpg" data-large="images/large4.jpg" alt="Beach waves">
+          <figcaption>Beach waves</figcaption>
+        </figure>
+
+        <!-- Add more figure blocks as needed (thumbN / largeN) -->
+      </div>
+    </section>
+  </main>
+
+  <!-- LIGHTBOX / MODAL -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Image viewer">
+      <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+      <button class="lightbox-prev" aria-label="Previous image">&#10094;</button>
+
+      <div class="lightbox-figure">
+        <img id="lightbox-img" src="" alt="" />
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+      </div>
+
+      <button class="lightbox-next" aria-label="Next image">&#10095;</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>© Manmeet</p>
+  </footer>
+</body>
+</html>
