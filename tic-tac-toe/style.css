@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#gameBoard {
+    width: 608px;
+    height: 608px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(3, 200px);
+    border: 2px solid orange;
+    position: relative;
+}
+
+.square {
+    border: 2px solid orange;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+canvas {
+    position: absolute;
+    top: 80px; /* adjust to align with grid */
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
